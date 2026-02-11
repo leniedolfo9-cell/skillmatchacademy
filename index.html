@@ -132,11 +132,22 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-right: 16px;
         }
 
         .hero-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-cta.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .hero-cta.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .hero-support-text {
@@ -202,6 +213,97 @@
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
+        }
+
+        /* Application Process Section */
+        .application-process {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+            margin-bottom: 48px;
+        }
+
+        .process-step {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #1e40af;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h4 {
+            font-size: 1.3rem;
+            color: #1e293b;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .process-step p {
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* Application CTA Box */
+        .application-cta-box {
+            background: white;
+            border: 3px solid #1e40af;
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(30, 64, 175, 0.15);
+        }
+
+        .application-cta-box h3 {
+            font-size: 2rem;
+            color: #1e293b;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .application-cta-box p {
+            font-size: 1.15rem;
+            color: #475569;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .btn-large {
+            display: inline-block;
+            background: #1e40af;
+            color: white;
+            padding: 20px 48px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-large:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.4);
         }
 
         /* Image + Content Split Section */
@@ -370,21 +472,21 @@
             line-height: 1.6;
         }
 
-        /* CTA Section */
-        .cta-section {
+        /* Contact Section */
+        .contact-section {
             background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
             color: white;
             text-align: center;
             padding: 80px 24px;
         }
 
-        .cta-section h2 {
+        .contact-section h2 {
             font-size: 2.8rem;
             margin-bottom: 20px;
             font-weight: 700;
         }
 
-        .cta-section p {
+        .contact-section p {
             font-size: 1.25rem;
             margin-bottom: 40px;
             opacity: 0.95;
@@ -604,6 +706,13 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .hero-cta {
+                display: block;
+                margin-bottom: 16px;
+                margin-right: 0;
+                text-align: center;
+            }
         }
 
         @media (max-width: 640px) {
@@ -619,8 +728,16 @@
                 gap: 24px;
             }
 
-            .cta-section h2 {
+            .contact-section h2 {
                 font-size: 2rem;
+            }
+
+            .application-cta-box {
+                padding: 32px 24px;
+            }
+
+            .application-cta-box h3 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -632,9 +749,9 @@
             <div class="logo">Skill Match Academy</div>
             <nav>
                 <a href="#services">Services</a>
-                <a href="#approach">Approach</a>
+                <a href="#apply">Apply Now</a>
                 <a href="#faq">FAQ</a>
-                <a href="#contact" class="nav-cta">Book Consultation</a>
+                <a href="#contact" class="nav-cta">Contact Us</a>
             </nav>
         </div>
     </header>
@@ -644,8 +761,11 @@
         <div class="hero-content">
             <h1>Navigate Your Future with Confidence</h1>
             <p class="hero-subheadline">Expert guidance for students and professionals exploring work-based learning pathways in Malaysia—with opportunities that extend to Europe, Japan and South Korea.</p>
-            <a href="https://wa.me/601111676913?text=Hello,%20I%27d%20like%20to%20book%20a%20consultation" class="hero-cta">
-                📱 Book Free Consultation via WhatsApp
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXfRCo7cdsqM2iVFHHhQinoABUTyPo2LaX4YkJiTdy_sbMog/viewform" target="_blank" class="hero-cta">
+                📝 Apply Online Now
+            </a>
+            <a href="https://wa.me/601111676913?text=Hello,%20I%27d%20like%20to%20inquire%20about%20consultation" class="hero-cta secondary">
+                💬 WhatsApp Us
             </a>
             <p class="hero-support-text">We help you align your skills with meaningful career pathways through personalized education and career consultancy.</p>
         </div>
@@ -668,6 +788,48 @@
             </div>
         </div>
     </div>
+
+    <!-- Application Process Section -->
+    <section id="apply" class="application-process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple Online Application Process</h2>
+                <p class="section-subtitle">Start your journey with us in just a few easy steps. Our automated application system makes it quick and convenient.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Fill Application Form</h4>
+                    <p>Complete our online application form with your educational background, career goals, and preferences.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Initial Review</h4>
+                    <p>Our team will review your application and assess your eligibility for various pathways.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Consultation Scheduled</h4>
+                    <p>We'll contact you to schedule a free consultation to discuss your options in detail.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Pathway Planning</h4>
+                    <p>Receive personalized guidance and a roadmap for your education and career journey.</p>
+                </div>
+            </div>
+
+            <div class="application-cta-box">
+                <h3>Ready to Get Started?</h3>
+                <p>Submit your application now and take the first step toward your future. Our online form takes just 5-10 minutes to complete.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXfRCo7cdsqM2iVFHHhQinoABUTyPo2LaX4YkJiTdy_sbMog/viewform" target="_blank" class="btn-large">
+                    📝 Complete Online Application
+                </a>
+                <p style="margin-top: 20px; font-size: 0.95rem; color: #64748b;">Free initial consultation • No commitment required • Secure & confidential</p>
+            </div>
+        </div>
+    </section>
 
     <!-- About + Image Section -->
     <section>
@@ -797,11 +959,11 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section id="contact" class="cta-section">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Ready to Explore Your Options?</h2>
-            <p>Book a free initial consultation to discuss your education and career goals. We'll help you understand what pathways may be available to you and how we can support your journey.</p>
+            <h2>Have Questions? Let's Talk</h2>
+            <p>Our team is here to answer your questions about our services, application process, or career pathways. Reach out today.</p>
             
             <div class="contact-options">
                 <div class="contact-card">
@@ -815,7 +977,8 @@
             </div>
 
             <div class="cta-buttons">
-                <a href="https://wa.me/601111676913?text=Hello,%20I%27d%20like%20to%20book%20a%20consultation" class="btn-primary btn-whatsapp">💬 WhatsApp Us</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXfRCo7cdsqM2iVFHHhQinoABUTyPo2LaX4YkJiTdy_sbMog/viewform" target="_blank" class="btn-primary">📝 Apply Online</a>
+                <a href="https://wa.me/601111676913?text=Hello,%20I%27d%20like%20to%20inquire%20about%20consultation" class="btn-primary btn-whatsapp">💬 WhatsApp Us</a>
                 <a href="tel:+601111676913" class="btn-primary">📞 Call Now</a>
             </div>
 
@@ -831,12 +994,17 @@
             </div>
             
             <div class="faq-item">
+                <strong>Q: How do I apply for consultation?</strong>
+                <p>A: Simply complete our online application form. Once submitted, we'll review your information and contact you within 2-3 business days to schedule a free consultation.</p>
+            </div>
+
+            <div class="faq-item">
                 <strong>Q: Do you guarantee I will get accepted into a program?</strong>
                 <p>A: No. We provide guidance and application support, but admissions decisions are made solely by the educational institutions.</p>
             </div>
 
             <div class="faq-item">
-                <strong>Q: Can you guarantee I will get a job in Europe or Japan?</strong>
+                <strong>Q: Can you guarantee I will get a job in Europe, Japan or South Korea?</strong>
                 <p>A: No. We provide information about pathways that may lead to international opportunities, but employment and visa outcomes depend on many factors beyond our control.</p>
             </div>
 
@@ -854,6 +1022,11 @@
                 <strong>Q: What if I'm not eligible for international pathways?</strong>
                 <p>A: We'll help you identify alternative options within Malaysia or discuss steps you can take to build eligibility over time.</p>
             </div>
+
+            <div class="faq-item">
+                <strong>Q: How long does the application process take?</strong>
+                <p>A: The online application takes 5-10 minutes. After submission, we'll contact you within 2-3 business days to schedule your consultation.</p>
+            </div>
         </div>
     </section>
 
@@ -865,12 +1038,12 @@
             </div>
             <div class="testimonials">
                 <div class="testimonial">
-                    <p>"Skill Match Academy helped me understand my options clearly. They didn't promise the impossible—they gave me a realistic plan and supported me every step of the way."</p>
+                    <p>"The online application was so simple! Within days, I had a consultation scheduled and received clear guidance on my options. Skill Match Academy didn't promise the impossible—they gave me a realistic plan."</p>
                     <p class="testimonial-author">— Ahmad, Engineering Student</p>
                 </div>
                 <div class="testimonial">
-                    <p>"Professional, transparent, and incredibly helpful. I finally feel confident about my next career move."</p>
-                    <p class="testimonial-author">— Priya, Career Changer</p>
+                    <p>"Professional, transparent, and incredibly helpful. The application process was seamless, and I finally feel confident about my next career move."</p>
+                    <p class="testimonial-author">— Jane, Career Changer</p>
                 </div>
             </div>
         </div>
@@ -886,17 +1059,19 @@
                     <p>Professional guidance for students and professionals exploring work-based learning pathways.</p>
                 </div>
                 <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#services">Services</a>
+                    <a href="#apply">Apply Online</a>
+                    <a href="#approach">Our Approach</a>
+                    <a href="#faq">FAQs</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
                     <h4>Contact</h4>
                     <a href="mailto:dolfolenie9@gmail.com">dolfolenie9@gmail.com</a>
                     <a href="tel:+601111676913">+60 111 167 6913</a>
                     <a href="https://wa.me/601111676913">WhatsApp</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="#services">Services</a>
-                    <a href="#approach">Our Approach</a>
-                    <a href="#faq">FAQs</a>
-                    <a href="#contact">Contact</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXfRCo7cdsqM2iVFHHhQinoABUTyPo2LaX4YkJiTdy_sbMog/viewform" target="_blank">Online Application</a>
                 </div>
             </div>
             
